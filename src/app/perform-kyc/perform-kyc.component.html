@@ -1,0 +1,70 @@
+<div class="container mt-6 kyc-form"[ngClass]="{'entireForm': !formSubmitted}" *ngIf="!formSubmitted; else checkKycMessage">
+  
+    <form #customerForm="ngForm" (ngSubmit)="onSubmit()">
+    <h1 class="location">Perform KYC</h1><br>
+
+      <div class="form-group mb-3">
+        <label for="mobileNumber">Mobile Number</label>
+        <input type="text" class="form-control" id="mobileNumber" [(ngModel)]="mobileNumber" #mobile="ngModel" name="mobileNumber" required pattern="[0-9]{10}">
+        <div *ngIf="mobile.errors?.['required'] && mobile.touched" class="text-danger">
+          Mobile Number is required.
+        </div>
+        <div *ngIf="mobile.errors?.['pattern'] && mobile.touched" class="text-danger">
+          Mobile Number must be a 10-digit number.
+        </div>
+      </div>
+  
+      <div class="form-group mb-3 location">
+        <button type="submit" class="submitbtn me-5" [style.background-color]="customerForm.valid ? 'rgb(89, 181, 93)' : 'rgb(136, 136, 136)'" [disabled]="!customerForm.valid">Check KYC Status</button>
+        <button type="reset" class="clearbtn" (click)="onClear()">Clear</button>
+      </div>
+    </form>
+  </div>
+  
+  
+
+  <ng-template #checkKycMessage >
+
+
+    <div class="container mt-6 kyc-message" *ngIf="showkycData">
+      <h3>KYC for Mobile Number {{mobileNumber}} Completed Successfully !</h3><br>
+      <h4><strong>KYC status : </strong> {{_kycresult.kycStatus}}</h4><br>
+      <i *ngIf="_kycresult.kycStatus === 'Success'">Account is activated, the issued account number is : <b>{{_kycresult.account_number}}</b> as on {{_kycresult.kycDate}}</i><br>
+
+      <div *ngIf="_kycresult.kycStatus === 'Failed'" class="kyc-failed">
+        <p><strong>Reason For KYC Failure : </strong> <i> {{_kycresult.kycInfo}}</i>The registered account had Date Of Birth : <i>{{_kycresult.dob}}</i><br>
+        and Nationality : <i>{{_kycresult.country}}</i></p><br>
+        <p>Note<i>Update incorrect KYC details if any, for KYC</i></p><br>
+      </div>
+      <button class="back-btn" (click)="onShowForm()">Back to Form</button>
+      
+  </div>
+
+   <div class="container mt-6 kyc-message kyc-already-completed" *ngIf="showError">
+
+      <div class="kyc-already-completed-success" *ngIf="_kycresult.kycStatus === 'Success'">
+        <h2>KYC Already Completed !</h2>
+        <h3><strong>KYC status : </strong>{{_kycresult.kycStatus}}</h3>
+         <i>Account number<b> {{_kycresult.account_number}}</b> is activated based on KYC Done at {{_kycresult.kycDate}}</i><br>
+      <button class="back-btn" (click)="onShowForm()">Back to Form</button>
+
+      </div>
+
+      <div  class="kyc-already-completed-failed" *ngIf="_kycresult.kycStatus === 'Failed'">
+        <h2>KYC Already Completed !</h2>
+        <h3><strong>KYC status : </strong> {{_kycresult.kycStatus}}</h3>
+        <p><strong>Reason For KYC Failure : </strong><i> {{_kycresult.kycInfo}} based on KYC Done at {{_kycresult.kycDate}}</i></p><br>
+      <button class="back-btn" (click)="onShowForm()">Back to Form</button>
+
+      </div>
+      
+    </div> 
+    <div *ngIf="no_account_found">
+      <p>NO ACCOUNT FOUND !</p>
+      <h2>For mobile number {{mobileNumber}} no registered user found.<br>
+      Please check for correct number</h2><br>
+      <button class="back-btn" (click)="onShowForm()">Back to Form</button>
+
+    </div>
+
+  </ng-template>

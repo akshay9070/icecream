@@ -1,0 +1,118 @@
+.kyc-message {
+
+    margin-top:200px;
+    text-align: center;
+    padding: 20px;
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .kyc-details {
+    margin-top: 20px;
+  }
+  
+  .back-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .back-btn:hover {
+    background-color: #0056b3;
+  }
+  
+
+
+.kyc-form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #e6e6e6;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9;
+  }
+  
+  .kyc-form h1 {
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+ 
+  
+  .text-danger {
+    color: #dc3545;
+    font-size: 14px;
+    margin-top: 5px;
+  }
+  
+  .location {
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  .location .submitbtn,
+  .location .clearbtn {
+    padding: 12px 24px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 16px;
+  }
+  
+  .location .submitbtn {
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+  }
+  
+  .location .submitbtn:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  .location .clearbtn {
+    background-color: #d9534f;
+    color: #fff;
+    border: none;
+  }
+  
+  .location .clearbtn:hover {
+    background-color: #c9302c;
+  }
+  
+
+  .entireForm{
+    margin-top:200px;
+    display: flex;
+    justify-content: center;
+    max-height:700px;
+    max-width:600px; 
+    padding: 5px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+}
+
+.entireForm h1{
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+
+}
+
+
+.kyc-error h2{
+  color:#c9302c;
+}

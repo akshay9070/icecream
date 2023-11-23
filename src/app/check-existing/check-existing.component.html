@@ -1,0 +1,60 @@
+<div class="container mt-6 location" [ngClass]="{'entireForm': !formSubmitted}">
+
+    <form  #customerForm="ngForm" (ngSubmit)="onSubmit()"  *ngIf="!formSubmitted; else showMessage">
+<h1 class="location">Check Existing Accounts</h1><br>
+     
+      <div class="form-group mb-3">
+        <label for="mobileNumber">Mobile Number</label>
+        <input type="text" class="form-control" id="mobileNumber" [(ngModel)]="mobileNumber" #mobile="ngModel" name="mobileNumber" required pattern="[0-9]{10}">
+        <div *ngIf="mobile.errors?.['required'] && mobile.touched" class="text-danger">
+          Mobile Number is required.
+        </div>
+        <div *ngIf="mobile.errors?.['pattern'] && mobile.touched" class="text-danger">
+          Mobile Number must be a 10-digit number.
+        </div>
+      </div>
+  
+  <div class="form-group mb-3 location">
+    <button type="submit" class="submitbtn me-5"  [style.background-color]="customerForm.valid ? 'rgb(89, 181, 93)' : 'rgb(136,136,136)'"[disabled]="!customerForm.valid">Submit</button>
+    <button type="reset" class="clearbtn" (click)="onClear()">Clear</button>
+  
+  </div>
+  
+    </form>
+  </div>
+  
+  
+  
+  
+  <ng-template #showMessage >
+
+    <div *ngIf="accountExist" class="aaa">
+      <h2 class="location ">Account Found For Mobile Number {{accountNum}} !</h2><br>
+      <div>
+        <span><strong>Refer Accounts Details Below:</strong></span><br>
+        <span><strong>FIRST NAME :</strong> {{customer.firstName}}</span><br>
+        <span><strong>LAST NAME :</strong> {{customer.lastName}}</span><br>
+        <span><strong>ADDRESS :</strong> {{customer.address}}</span><br>
+        <span><strong>COUNTRY :</strong> {{customer.country}}</span><br>
+        <span><strong>EMAIL ID :</strong> {{customer.email}}</span><br>
+        <span><strong>MOBILE NUMBER :</strong> {{customer.mobileNumber}}</span><br>
+        <span><strong>KYC STATUS :</strong> <span [ngClass]="{'success': kycStatus === 'Success', 'failure': kycStatus === 'Failed', 'pending': kycStatus === 'Pending'}">{{kycStatus}}</span></span><br>
+      </div>
+      
+      <button class="back-btn" (click)="onShowForm()">Back</button>
+    </div>
+    
+
+      <div *ngIf="!accountExist" class="aaa">
+        <h2>No ACCOUNT FOUND !</h2>
+      <button class="back-btn" (click)="onShowForm()">Back</button>
+
+      </div>
+
+
+
+      
+  </ng-template>
+
+  
+  

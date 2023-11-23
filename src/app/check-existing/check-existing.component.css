@@ -1,0 +1,134 @@
+
+.clearbtn{
+    display: inline-block;
+    outline: 0;
+    cursor: pointer;
+    text-align: center;
+    border: 0;
+    padding: 7px 16px;
+    min-height: 36px;
+    min-width: 36px;
+    color: #ffffff;
+    background:red;
+    border-radius: 40px;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.submitbtn{
+    display: inline-block;
+    outline: 0;
+    cursor: pointer;
+    text-align: center;
+    border: 0;
+    padding: 7px 16px;
+    min-height: 36px;
+    min-width: 36px;
+    border-radius: 40px;
+    font-weight: 500;
+    font-size: 14px;
+    align-content: center;
+}
+
+ .entireForm{
+
+  margin-top:200px;
+
+  display: flex;
+  justify-content: center;
+  max-height:800px;
+  max-width: 700px; 
+  padding: 5px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+} 
+
+.location {
+    display: flex;
+    justify-content: center;
+  }
+
+  span{
+    display: flex;
+    justify-content: center;
+  }
+
+  .success {
+    color: green;
+    font-weight: bold; /* Example: Make the text bold for success */
+  }
+  
+  .failure {
+    color: red;
+    text-decoration: underline; /* Example: Underline the text for failure */
+  }
+  
+  .pending {
+    color: grey;
+    font-style: italic; /* Example: Make the text italic for pending */
+  }
+  
+  /* Additional styling for the button */
+  .back-btn {
+    background-color: #3498db; /* Example: Blue background color */
+    color: #ffffff; /* Example: White text color */
+    padding: 10px 15px; /* Example: Add padding for a more prominent button */
+    border: none; /* Example: Remove border for a clean look */
+    border-radius: 5px; /* Example: Add border-radius for rounded corners */
+    cursor: pointer; /* Example: Change cursor to pointer for better user interaction */
+  }
+  
+
+.entireForm h1{
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+
+}
+
+/* styles.css or your-component.css */
+.aaa {
+  background-color: #f4f4f4; /* Light grey background */
+  padding: 20px; /* Padding for better readability */
+  border: 1px solid #ddd; /* Border color */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Box shadow for a subtle effect */
+  margin-top: 85px; /* Adjust margin based on your design */
+}
+
+.aaa h2 {
+  color: #333; /* Text color for the heading */
+  font-family:'Times New Roman', Times, serif;
+  margin-bottom: 15px; /* Add spacing below the heading */
+}
+
+.aaa div {
+  margin-top: 10px; /* Adjust spacing between heading and details */
+}
+.a h5{
+  text-align: justify;
+  font-style: italic;
+}
+.aaa span {
+  display: block; /* Display each detail on a new line */
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size :20px;
+  margin-bottom: 5px; /* Add spacing between details */
+}
+
+.aaa button.back-btn {
+  background-color: #007bff; /* Blue background color for the button */
+  color: #fff; /* Text color for the button */
+  padding: 10px 15px; /* Padding for the button */
+  border: none; /* Remove button border */
+  border-radius: 5px; /* Rounded corners for the button */
+  cursor: pointer; /* Change cursor on hover */
+  transition: background-color 0.3s ease; /* Smooth transition for background color */
+
+}
+
+.aaa button.back-btn:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
